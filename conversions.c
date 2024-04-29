@@ -6,13 +6,13 @@
 /*   By: wpepping <wpepping@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:16:06 by wpepping          #+#    #+#             */
-/*   Updated: 2024/04/26 16:19:20 by wpepping         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:01:02 by wpepping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-static int	nr_of_chars(int n)
+static int	nr_of_chars(long n)
 {
 	int	i;
 	int	pow;

@@ -6,11 +6,11 @@
 /*   By: wpepping <wpepping@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:04:31 by wpepping          #+#    #+#             */
-/*   Updated: 2024/04/26 16:17:59 by wpepping         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:45:18 by wpepping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int	print_conversion(const char *str, va_list args)
 {
@@ -36,8 +36,21 @@ static int	print_conversion(const char *str, va_list args)
 
 int	check_conversion(const char *str)
 {
-	if (*str == '\0')
-		return (1);
+	while (*str != '\0')
+	{
+		if (*str == '%')
+		{
+			str++;
+			if (isin("cspdiuxX%", *str) == 0)
+			{
+				ft_putstr_fd("error: unknown conversion type character '", 1);
+				ft_putchar_fd(*str, 1);
+				ft_putstr_fd("'\n", 1);
+				return (-1);
+			}
+		}
+		str++;
+	}
 	return (1);
 }
 
@@ -46,10 +59,10 @@ int	ft_printf(const char *str, ...)
 	int		len;
 	va_list	args;
 
+	if (str == NULL || check_conversion(str) == -1)
+		return (0);
 	va_start(args, str);
 	len = 0;
-	if (check_conversion(str) == -1)
-		return (0);
 	while (*str != '\0')
 	{
 		if (*str == '%')

@@ -6,11 +6,11 @@
 /*   By: wpepping <wpepping@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:16:17 by wpepping          #+#    #+#             */
-/*   Updated: 2024/04/25 16:11:47 by wpepping         ###   ########.fr       */
+/*   Updated: 2024/04/26 18:34:41 by wpepping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	isin(const char *str, char c)
 {
@@ -38,17 +38,6 @@ char	*ft_strcpy(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-char	*extstr(char *src, int *buffer)
-{
-	char	*result;
-
-	*buffer *= 2;
-	result = malloc(*buffer * sizeof(char));
-	ft_strcpy(result, src);
-	free(src);
-	return (result);
 }
 
 size_t	ft_strlen(const char *s)

@@ -6,16 +6,21 @@
 /*   By: wpepping <wpepping@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:56:15 by wpepping          #+#    #+#             */
-/*   Updated: 2024/04/26 16:17:53 by wpepping         ###   ########.fr       */
+/*   Updated: 2024/04/28 13:52:30 by wpepping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	conversion_p(void *p)
 {
+	if (p == NULL)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
 	ft_putstr_fd("0x", 1);
-	return (ft_putltohex_fd((unsigned long)p, 1, 1) + 2);
+	return (ft_putultohex_fd((unsigned long)p, 1, 1) + 2);
 }
 
 int	conversion_s(char *s)
@@ -31,10 +36,10 @@ int	conversion_s(char *s)
 
 int	conversion_upper_x(int i)
 {
-	return (ft_putltohex_fd(i, 1, 0));
+	return (ft_pututohex_fd(i, 1, 0));
 }
 
 int	conversion_x(int i)
 {
-	return (ft_putltohex_fd(i, 1, 1));
+	return (ft_pututohex_fd(i, 1, 1));
 }

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wpepping <wpepping@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:10:13 by wpepping          #+#    #+#             */
-/*   Updated: 2024/04/26 16:41:22 by wpepping         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:32:44 by wpepping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -32,7 +32,8 @@ size_t	ft_strlen(const char *s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-int		ft_putltohex_fd(unsigned int n, int fd, int lower);
+int		ft_pututohex_fd(unsigned int n, int fd, int lower);
+int		ft_putultohex_fd(unsigned long n, int fd, int lower);
 void	ft_putunsigned_fd(unsigned int n, int fd);
 void	output_error(char *error);
 
