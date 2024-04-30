@@ -6,7 +6,7 @@
 /*   By: wpepping <wpepping@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:10:13 by wpepping          #+#    #+#             */
-/*   Updated: 2024/04/26 17:32:44 by wpepping         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:50:16 by wpepping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ void	ft_putnbr_fd(int n, int fd);
 int		ft_pututohex_fd(unsigned int n, int fd, int lower);
 int		ft_putultohex_fd(unsigned long n, int fd, int lower);
 void	ft_putunsigned_fd(unsigned int n, int fd);
-void	output_error(char *error);
 
 #endif

@@ -2,7 +2,7 @@ NAME = libftprintf.a
 
 OBJ_DIR = OBJS
 
-SRCS = conversions2.c conversions.c error_handling.c ft_printf.c output_functions.c output_functions2.c string_functions.c
+SRCS = conversions2.c conversions.c ft_printf.c output_functions.c output_functions2.c string_functions.c
 
 OBJS = $(SRCS:%.c=%.o)
 
